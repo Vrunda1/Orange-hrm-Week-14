@@ -40,9 +40,11 @@ public class UserTest extends TestBase {
         addUserPage.enterEmpName("Ananya Dash");
         addUserPage.enterUserName("Georgiana");
         addUserPage.selectStatus("Disabled");
-        addUserPage.enterPassword("abc654321");
-        addUserPage.enterConfirmPassword("abc654321");
+        addUserPage.enterPassword("AwY@654321");
+        addUserPage.enterConfirmPassword("AwY@654321");
         addUserPage.clickOnSave();
+        softAssert.assertEquals(addUserPage.saveSuccessText(),"Successfully Saved","");
+        softAssert.assertAll();
     }
     @Test(groups = {"smoke","regression"})
     public void searchTheUserCreatedAndVerifyIt(){

@@ -33,6 +33,8 @@ public class AddUserPage extends Utility {
     WebElement cancleBtn;
     @FindBy(xpath = "//h1[@id='UserHeading']")
     WebElement addUserText;
+    @FindBy(xpath = "//div[@class='message success fadable']")
+    WebElement savedSuccessText;
 
     public void selectRole(String role){
 
@@ -74,5 +76,10 @@ public class AddUserPage extends Utility {
 
         Reporter.log("getting AddUser text from "+addUserText.toString()+"<br>");
         return getTextFromElement(addUserText);
+    }
+    public String saveSuccessText(){
+        Reporter.log("getting AddUser text from "+savedSuccessText.toString()+"<br>");
+        mouseHoverToElement(savedSuccessText);
+        return getTextFromElement(savedSuccessText);
     }
 }
